@@ -1,10 +1,118 @@
-h1 {
-    text-decoration: underline;
-    color: #CE0000;
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-    background-color: rgb(255, 255, 255);
+
+:root {
+    --primary-red: #D2122E; /* Vermelho intenso inspirado na logo Ironman */
+    --dark-red: #8B0000;
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+    --text-dark: #222;
 }
-div#lenovo{
-    font-family: fantasy;
+
+body {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--white);
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid var(--primary-red);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--primary-red);
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: var(--dark-red);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Estilização da Lista Horizontal */
+#modalidades {
+    margin: 30px 0;
+}
+
+.horizontal-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.horizontal-list li {
+    flex: 1;
+}
+
+.horizontal-list li a {
+    display: block;
+    padding: 15px 25px;
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 18, 46, 0.3);
+}
+
+.horizontal-list li a:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+footer strong {
+    color: var(--primary-red);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .horizontal-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
 }

@@ -8,10 +8,9 @@
     <title>Triatlo</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Saudação Personalizada -->
-        <div id="saudacao" class="welcome-msg"></div>
+    <div id="saudacao" class="welcome-msg-top"></div>
 
+    <div class="container">
         <header>
             <h1>TRIATLO</h1>
             <h2>O que é?</h2>
@@ -34,14 +33,12 @@
     </div>
 
     <script>
-        // Recupera o nome do localStorage
         const nomeUsuario = localStorage.getItem('usuarioNome');
         const saudacaoDiv = document.getElementById('saudacao');
 
         if (nomeUsuario) {
             saudacaoDiv.innerHTML = `<p>Bem-vindo, <strong>${nomeUsuario}</strong>!</p>`;
         } else {
-            // Se não houver nome (acesso direto), redireciona para a página de login
             window.location.href = 'acesso.html';
         }
     </script>

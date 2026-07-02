@@ -1,5 +1,10 @@
 
-/* Reset básico para garantir consistência entre navegadores */
+/* 
+   ESTILO FINAL TRIATLO - STYLE1
+   Design Moderno, Tema Escuro e Paleta Ironman
+*/
+
+/* Reset e Configurações Globais */
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +15,6 @@
 :root {
     --primary-red: #D2122E;
     --dark-red: #8B0000;
-
-    /* Tema escuro - style1 */
     --bg-dark: #121212;
     --card-dark: #1E1E1E;
     --card-hover: #2A2A2A;
@@ -29,10 +32,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; /* Espaço para a saudação no topo */
+    padding: 100px 20px 40px; /* Espaço para a saudação no topo */
 }
 
-/* Saudação de Boas-vindas no TOPO da página */
+/* Saudação de Boas-vindas (Topo) */
 .welcome-msg-top {
     position: absolute;
     top: 30px;
@@ -56,12 +59,12 @@ body {
     color: var(--primary-red);
 }
 
+/* Container Principal */
 .container {
     background: var(--card-dark);
     width: 100%;
     max-width: 900px;
     padding: 40px;
-    margin: 20px 0;
     border-radius: 15px;
     border-top: 8px solid var(--primary-red);
     box-shadow: 0 10px 30px rgba(0,0,0,.6);
@@ -75,7 +78,7 @@ header {
 
 header h1 {
     color: var(--primary-red);
-    font-size: 3rem;
+    font-size: 3.5rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -88,6 +91,36 @@ header h2 {
     margin-bottom: 20px;
 }
 
+/* Estilo Universal para Imagens de Modalidade */
+.modalidade-img-container {
+    width: 100%;
+    margin: 20px 0 40px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    aspect-ratio: 16 / 9;
+    background-color: var(--card-hover);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+.modalidade-img-container:hover {
+    border-color: var(--primary-red);
+}
+
+.modalidade-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modalidade-img:hover {
+    transform: scale(1.08);
+}
+
+/* Conteúdo de Texto */
 h3 {
     color: var(--primary-red);
     font-size: 1.8rem;
@@ -105,15 +138,13 @@ h3 {
     text-align: justify;
 }
 
-/* Listas de Benefícios e Distâncias */
-.benefits-list,
-.distances-list {
+/* Listas de Benefícios e Detalhes */
+.benefits-list, .distances-list {
     list-style: none;
     margin-bottom: 30px;
 }
 
-.benefits-list li,
-.distances-list li {
+.benefits-list li, .distances-list li {
     background: rgba(255,255,255,.03);
     margin-bottom: 12px;
     padding: 15px;
@@ -122,13 +153,11 @@ h3 {
     transition: .3s;
 }
 
-.benefits-list li:hover,
-.distances-list li:hover {
+.benefits-list li:hover, .distances-list li:hover {
     background: var(--card-hover);
 }
 
-.benefits-list li strong,
-.distances-list li strong {
+.benefits-list li strong, .distances-list li strong {
     color: #ff6b6b;
     display: block;
     margin-bottom: 5px;
@@ -172,7 +201,7 @@ h3 {
     box-shadow: 0 6px 20px rgba(139,0,0,.6);
 }
 
-/* Estilos Específicos para Login/Formulário */
+/* Estilos de Formulário (Acesso) */
 .login-form {
     margin: 30px 0;
     text-align: center;
@@ -193,7 +222,6 @@ h3 {
     font-weight: bold;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .input-group input {
@@ -210,22 +238,9 @@ h3 {
 
 .input-group input:focus {
     border-color: var(--primary-red);
-    background-color: #333;
-    box-shadow: 0 0 10px rgba(210, 18, 46, 0.2);
 }
 
-/* Footer e Links */
-a#bruno {
-    color: var(--primary-red);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a#bruno:hover {
-    color: #ff6b6b;
-    text-decoration: underline;
-}
-
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -239,54 +254,16 @@ footer strong {
     color: var(--primary-red);
 }
 
+footer a {
+    color: var(--primary-red);
+    text-decoration: none;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    header h2 {
-        font-size: 1.2rem;
-    }
-
-    .horizontal-list {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .horizontal-list li {
-        min-width: auto;
-    }
-
-    .welcome-msg-top {
-        width: 90%;
-        top: 20px;
-    }
-}
-
-/* Estilos para Imagens Hero */
-.hero-image-container {
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 2px solid var(--border-color);
-    aspect-ratio: 16 / 9; /* Força a proporção 16:9 */
-    background-color: var(--card-hover); /* Cor de fundo enquanto a imagem carrega */
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.hero-image:hover {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+    .container { padding: 20px; }
+    header h1 { font-size: 2.5rem; }
+    .horizontal-list { flex-direction: column; gap: 10px; }
+    .horizontal-list li { min-width: auto; }
+    .welcome-msg-top { width: 90%; top: 20px; }
 }

@@ -267,7 +267,7 @@ footer a {
     .welcome-msg-top { width: 90%; top: 20px; }
 }
 /* ===================================
-   BACKGROUND SLIDESHOW - APENAS INDEX.HTML (CORRIGIDO)
+   BACKGROUND SLIDESHOW - APENAS INDEX.HTML (SEM DELAY)
    =================================== */
 
 .bg-slideshow {
@@ -278,7 +278,7 @@ footer a {
     height: 100%;
     overflow: hidden;
     z-index: -2;
-    background-color: #000; /* evita qualquer brecha visual */
+    background-color: #000;
 }
 
 .bg-img {
@@ -293,7 +293,7 @@ footer a {
     animation-name: slideShow;
     animation-duration: 20s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     will-change: opacity, transform;
     backface-visibility: hidden;
 }
@@ -308,7 +308,7 @@ footer a {
         opacity: 0;
         transform: translateX(100%);
     }
-    5% {
+    10% {
         opacity: 1;
         transform: translateX(0);
     }
@@ -316,7 +316,7 @@ footer a {
         opacity: 1;
         transform: translateX(0);
     }
-    30% {
+    35% {
         opacity: 0;
         transform: translateX(-100%);
     }

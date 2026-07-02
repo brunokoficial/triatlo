@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="pngwing.com.ico" type="image/x-icon">
-    <title>Acesso</title>
+    <title>Acesso - Triatlo</title>
 </head>
 <body>
     <div class="container">
@@ -16,7 +15,7 @@
 
         <main class="login-form">
             <div class="input-group">
-                <label for="nome">Qual o seu primeiro nome?</label>
+                <label for="nome">Qual o seu nome?</label>
                 <input type="text" id="nome" placeholder="Digite seu nome aqui" required>
             </div>
             
@@ -27,33 +26,44 @@
 
             <nav id="modalidades">
                 <ul class="horizontal-list">
-                    <li><a href="#" onclick="salvarAcesso(event)">Prosseguir</a></li>
+                    <li><a href="#" id="btnProsseguir" onclick="salvarAcesso(event)">Prosseguir</a></li>
                 </ul>
             </nav>
         </main>
 
         <footer>
-            <p>Desenvolvido por: <strong> <a href="https://github.com/brunokoficial" target="_blank" id="bruno">Bruno Kutcher</a></strong></p>
+            <p>Acesse o portal do Triatlo</p>
         </footer>
     </div>
 
     <script>
+        // Função principal para salvar e prosseguir
         function salvarAcesso(event) {
-            event.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const idade = document.getElementById('idade').value;
+            if (event) event.preventDefault();
+            
+            const nome = document.getElementById('nome').value.trim();
+            const idade = document.getElementById('idade').value.trim();
 
             if (nome && idade) {
-                // Salva para usar na página index.html
                 localStorage.setItem('usuarioNome', nome);
                 localStorage.setItem('usuarioIdade', idade);
-                
-                // Redireciona para a página principal
                 window.location.href = 'index.html';
             } else {
                 alert('Por favor, preencha seu nome e idade.');
             }
         }
+
+        // Adiciona o ouvinte para a tecla Enter em todo o documento
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                salvarAcesso();
+            }
+        });
+
+        // Foca automaticamente no campo de nome ao carregar a página
+        window.onload = () => {
+            document.getElementById('nome').focus();
+        };
     </script>
 </body>
 </html>

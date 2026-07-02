@@ -267,7 +267,7 @@ footer a {
     .welcome-msg-top { width: 90%; top: 20px; }
 }
 /* ===================================
-   BACKGROUND SLIDESHOW - APENAS INDEX.HTML (SEM DELAY)
+   BACKGROUND SLIDESHOW - APENAS INDEX.HTML (ESTEIRA CONTÍNUA)
    =================================== */
 
 .bg-slideshow {
@@ -281,48 +281,27 @@ footer a {
     background-color: #000;
 }
 
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.bg-track {
+    display: flex;
+    width: 500%; /* 5 imagens x 100% */
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transform: translateX(100%);
-    animation-name: slideShow;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    will-change: opacity, transform;
-    backface-visibility: hidden;
+    animation: slideTrack 24s linear infinite;
 }
 
-.bg-img-1 { animation-delay: 0s; }
-.bg-img-2 { animation-delay: 5s; }
-.bg-img-3 { animation-delay: 10s; }
-.bg-img-4 { animation-delay: 15s; }
+.bg-img {
+    width: 20%; /* 100% dividido por 5 imagens */
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
 
-@keyframes slideShow {
+@keyframes slideTrack {
     0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    10% {
-        opacity: 1;
         transform: translateX(0);
-    }
-    20% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    35% {
-        opacity: 0;
-        transform: translateX(-100%);
     }
     100% {
-        opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-80%); /* anda 4 das 5 imagens (a 5ª = cópia da 1ª fecha o loop) */
     }
 }
 

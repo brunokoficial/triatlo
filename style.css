@@ -1,7 +1,4 @@
-/* 
-   ESTILO FINAL TRIATLO - STYLE1
-   Design Moderno, Tema Escuro e Paleta Ironman
-*/
+/* CSS FINAL (estilo ironman) */
 
 /* Reset e Configurações Globais */
 * {
@@ -34,10 +31,7 @@ body {
     padding: 100px 20px 40px;
 }
 
-/* ============================================================
-   SISTEMA DE BACKGROUND UNIVERSAL (FIX)
-   Suporta Slideshow (Home) e Imagens Estáticas (Internas)
-   ============================================================ */
+/* SISTEMA DE BACKGROUND UNIVERSAL */
 
 /* Container Universal */
 .bg-slideshow, .page-bg-container {
@@ -62,7 +56,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Exclusivo para o Slideshow (Animação) */
+/* Exclusivo Para a Animação */
 .bg-img {
     opacity: 0;
     animation: slideshowAnim 20s infinite;
@@ -97,9 +91,7 @@ body {
     100% { opacity: 0; }
 }
 
-/* ============================================================
-   COMPONENTES DA PÁGINA
-   ============================================================ */
+/* COMPONENTES DA PÁGINA */
 
 /* Saudação de Boas-vindas (Topo) */
 .welcome-msg-top {
@@ -326,9 +318,7 @@ footer a {
     text-decoration: none;
 }
 
-/* ============================================================
-   SISTEMA DE CURTIDAS (STYLE1)
-   ============================================================ */
+/* Sistema de Curtidas */
 .like-container {
     position: fixed;
     bottom: 25px;

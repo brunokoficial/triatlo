@@ -328,3 +328,52 @@ body.home-page .container {
     transform: scale(1.1);
     opacity: 0.6;
 }
+/* Sistema de Curtidas */
+.like-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.like-container:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-3px);
+}
+
+.like-button {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(210, 18, 46, 0.3);
+}
+
+.like-button:disabled {
+    background: #555;
+    cursor: default;
+    box-shadow: none;
+}
+
+.like-count {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 0.9rem;
+}

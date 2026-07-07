@@ -1,2 +1,2 @@
-# triatlo
+# TRIATHLON
 minha primeira pagina

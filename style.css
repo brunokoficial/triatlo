@@ -35,27 +35,42 @@ body {
 }
 
 /* ============================================================
-   SLIDESHOW DE FUNDO (CARROSSEL)
+   SISTEMA DE BACKGROUND UNIVERSAL (FIX)
+   Suporta Slideshow (Home) e Imagens Estáticas (Internas)
    ============================================================ */
-.bg-slideshow {
+
+/* Container Universal */
+.bg-slideshow, .page-bg-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Garante que fique atrás de tudo */
+    z-index: -1;
     overflow: hidden;
 }
 
-.bg-img {
+/* Estilo Base para Imagens */
+.bg-img, .page-bg-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.3) blur(5px);
+    transform: scale(1.1);
+}
+
+/* Exclusivo para o Slideshow (Animação) */
+.bg-img {
     opacity: 0;
     animation: slideshowAnim 20s infinite;
+}
+
+/* Exclusivo para Imagens Fixas (Páginas Internas) */
+.page-bg-image {
+    opacity: 0.6; /* Garante visibilidade constante */
 }
 
 .bg-overlay {
@@ -64,11 +79,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Overlay para legibilidade */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
-/* Delays para as 4 imagens */
+/* Delays do Slideshow */
 .bg-img-1 { animation-delay: 0s; }
 .bg-img-2 { animation-delay: 5s; }
 .bg-img-3 { animation-delay: 10s; }
@@ -120,7 +135,7 @@ body {
     border-top: 8px solid var(--primary-red);
     box-shadow: 0 10px 30px rgba(0,0,0,.6);
     text-align: left;
-    z-index: 10; /* Mantém o conteúdo acima do slideshow */
+    z-index: 10;
 }
 
 header {
@@ -318,7 +333,7 @@ footer a {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 2000; /* Acima do slideshow e do conteúdo */
+    z-index: 2000;
     display: flex;
     align-items: center;
     gap: 12px;
